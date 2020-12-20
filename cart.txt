@@ -1,0 +1,11 @@
+1. We are sending the pid from product.php to cart.php
+2. You have to extract the pid using $pid=$_REQUEST["pid"]
+3. Fetch that particular product from products table using query
+	select * from products where pid='". $pid."'"
+4. You will get a single row
+5. Now in the resulting row fetch the following 
+	$pimage= $row[4], 
+	$description= $row[2]
+	
+6. Next, insert the above values to cart table, (Default quantity=1)
+7. Finally, fetch the data from cart table and display on the cart page
